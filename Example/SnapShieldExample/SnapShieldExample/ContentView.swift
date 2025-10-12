@@ -81,24 +81,23 @@ struct CustomPlaceholderExample: View {
             .padding()
             .background(Color.green.opacity(0.1))
             .cornerRadius(10)
-            .snapShield()
-//            .snapShield {
-//                ZStack {
-//                    Color.red.opacity(0.2)
-//                    VStack(spacing: 15) {
-//                        Image(systemName: "exclamationmark.shield.fill")
-//                            .font(.system(size: 60))
-//                            .foregroundColor(.red)
-//                        Text("Protected Content")
-//                            .font(.headline)
-//                            .foregroundColor(.red)
-//                        Text("Screenshots are not allowed")
-//                            .font(.caption)
-//                            .foregroundColor(.secondary)
-//                    }
-//                }
-//                .cornerRadius(10)
-//            }
+            .snapShield {
+                ZStack {
+                    Color.red.opacity(0.2)
+                    VStack(spacing: 15) {
+                        Image(systemName: "exclamationmark.shield.fill")
+                            .font(.system(size: 60))
+                            .foregroundColor(.red)
+                        Text("Protected Content")
+                            .font(.headline)
+                            .foregroundColor(.red)
+                        Text("Screenshots are not allowed")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                }
+                .cornerRadius(10)
+            }
         }
         .padding()
     }
@@ -120,9 +119,9 @@ struct BankCardExample: View {
                     expiryDate: "12/25",
                     cvv: "123"
                 )
-//                .snapShield {
-//                    BankCardPlaceholder()
-//                }
+                .snapShield {
+                    BankCardPlaceholder()
+                }
                 
                 Text("Try taking a screenshot of the card!")
                     .foregroundColor(.secondary)
@@ -261,19 +260,19 @@ struct MultipleProtectedViewsExample: View {
                 .padding()
                 .background(Color.orange.opacity(0.1))
                 .cornerRadius(10)
-//                .snapShield {
-//                    VStack {
-//                        Image(systemName: "key.fill")
-//                            .font(.largeTitle)
-//                            .foregroundColor(.orange)
-//                        Text("API Key Hidden")
-//                            .foregroundColor(.orange)
-//                    }
-//                    .frame(maxWidth: .infinity)
-//                    .padding()
-//                    .background(Color.orange.opacity(0.1))
-//                    .cornerRadius(10)
-//                }
+                .snapShield {
+                    VStack {
+                        Image(systemName: "key.fill")
+                            .font(.largeTitle)
+                            .foregroundColor(.orange)
+                        Text("API Key Hidden")
+                            .foregroundColor(.orange)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.orange.opacity(0.1))
+                    .cornerRadius(10)
+                }
                 
                 // Section 3: Not protected
                 VStack(alignment: .leading) {

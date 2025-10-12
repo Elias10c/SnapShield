@@ -8,17 +8,25 @@
 import SwiftUI
 import UIKit
 
-public struct SnapShieldView<Content: View>: UIViewRepresentable {
+struct SnapShieldView<Content: View, Placeholder: View>: UIViewRepresentable {
     
     private let content: () -> Content
+    private let placeholder: (() -> Placeholder)?
     private let hostingController: UIHostingController<Content>
+    private let placeholderHostingController: UIHostingController<Placeholder>?
     
-    public init(@ViewBuilder content: @escaping () -> Content) {
+    // Initializer with custom placeholder
+    init(
+        @ViewBuilder content: @escaping () -> Content,
+        @ViewBuilder placeholder: @escaping () -> Placeholder
+    ) {
         self.content = content
+        self.placeholder = placeholder
         self.hostingController = UIHostingController(rootView: content())
+        self.placeholderHostingController = UIHostingController(rootView: placeholder())
     }
     
-    public func makeUIView(context: Context) -> UIView {
+    func makeUIView(context: Context) -> UIView {
         let secureTextField = UITextField()
         secureTextField.isSecureTextEntry = true
         secureTextField.isUserInteractionEnabled = false
@@ -32,8 +40,8 @@ public struct SnapShieldView<Content: View>: UIViewRepresentable {
             subview.removeFromSuperview()
         }
         
+        // Add content view to secure view
         secureView.addSubview(hostingController.view)
-        
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -43,16 +51,56 @@ public struct SnapShieldView<Content: View>: UIViewRepresentable {
             hostingController.view.trailingAnchor.constraint(equalTo: secureView.trailingAnchor)
         ])
         
+        // If there's a placeholder, create container with both views
+        if let placeholderController = placeholderHostingController {
+            let containerView = UIView()
+            containerView.addSubview(placeholderController.view)
+            containerView.addSubview(secureView)
+            
+            placeholderController.view.translatesAutoresizingMaskIntoConstraints = false
+            secureView.translatesAutoresizingMaskIntoConstraints = false
+            
+            NSLayoutConstraint.activate([
+                // Placeholder constraints
+                placeholderController.view.topAnchor.constraint(equalTo: containerView.topAnchor),
+                placeholderController.view.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+                placeholderController.view.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+                placeholderController.view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+                
+                // Secure view constraints
+                secureView.topAnchor.constraint(equalTo: containerView.topAnchor),
+                secureView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+                secureView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+                secureView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+            ])
+            
+            return containerView
+        }
+        
+        // No placeholder, return secure view directly
         return secureView
     }
     
-    public func updateUIView(_ uiView: UIView, context: Context) { }
+    func updateUIView(_ uiView: UIView, context: Context) {
+        hostingController.rootView = content()
+        placeholderHostingController?.rootView = placeholder?() ?? placeholder!()
+    }
     
-    public func sizeThatFits(_ proposal: ProposedViewSize, uiView: UIView, context: Context) -> CGSize? {
+    func sizeThatFits(_ proposal: ProposedViewSize, uiView: UIView, context: Context) -> CGSize? {
         let targetSize = CGSize(
             width: proposal.width ?? .infinity,
             height: proposal.height ?? .infinity
         )
         return hostingController.sizeThatFits(in: targetSize)
+    }
+}
+
+// Initializer without placeholder (hides content on screenshot)
+extension SnapShieldView where Placeholder == EmptyView {
+    init(@ViewBuilder content: @escaping () -> Content) {
+        self.content = content
+        self.placeholder = nil
+        self.hostingController = UIHostingController(rootView: content())
+        self.placeholderHostingController = nil
     }
 }
