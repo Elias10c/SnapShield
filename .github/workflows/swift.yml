@@ -22,8 +22,16 @@ jobs:
     - name: Show Xcode version
       run: xcodebuild -version
     
+    - name: Install iOS Simulator Runtime
+      run: |
+        sudo xcodebuild -runFirstLaunch
+        xcrun simctl list runtimes
+    
     - name: Build for iOS
-      run: xcodebuild -scheme SnapShield -destination 'platform=iOS Simulator,name=iPhone 16' -skipPackagePluginValidation
+      run: xcodebuild build -scheme SnapShield -destination 'generic/platform=iOS' -skipPackagePluginValidation
     
     - name: Build for tvOS
-      run: xcodebuild -scheme SnapShield -destination 'platform=tvOS Simulator,name=Apple TV' -skipPackagePluginValidation
+      run: xcodebuild build -scheme SnapShield -destination 'generic/platform=tvOS' -skipPackagePluginValidation
+    
+    - name: Build for visionOS
+      run: xcodebuild build -scheme SnapShield -destination 'generic/platform=visionOS' -skipPackagePluginValidation
