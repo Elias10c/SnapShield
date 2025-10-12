@@ -5,7 +5,7 @@
 
 # 🛡️ SnapShield
 
-A lightweight Swift package that protects sensitive content in your iOS and tvOS apps from screenshots, screen recordings, and screen sharing.
+A lightweight Swift package that protects sensitive content in your iOS, VisionOS, MacOS and tvOS apps from screenshots, screen recordings, and screen sharing.
 
 [![Swift Version](https://img.shields.io/badge/Swift-6.2-orange.svg)](https://swift.org)
 [![Platform](https://img.shields.io/badge/Platform-iOS%2016%2B%20%7C%20tvOS%2016%2B-blue.svg)](https://developer.apple.com)
