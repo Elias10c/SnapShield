@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		040535DE2E9C518D00F1048D /* SnapShield in Frameworks */ = {isa = PBXBuildFile; productRef = 040535DD2E9C518D00F1048D /* SnapShield */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		040535BF2E9C4F9A00F1048D /* SnapShieldExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapShieldExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				040535DE2E9C518D00F1048D /* SnapShield in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = SnapShieldExample;
 			packageProductDependencies = (
+				040535DD2E9C518D00F1048D /* SnapShield */,
 			);
 			productName = SnapShieldExample;
 			productReference = 040535BF2E9C4F9A00F1048D /* SnapShieldExample.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = 040535B62E9C4F9A00F1048D;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				040535DC2E9C518D00F1048D /* XCLocalSwiftPackageReference "../../../SnapShield" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 040535C02E9C4F9A00F1048D /* Products */;
 			projectDirPath = "";
@@ -351,6 +360,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		040535DC2E9C518D00F1048D /* XCLocalSwiftPackageReference "../../../SnapShield" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../../SnapShield;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		040535DD2E9C518D00F1048D /* SnapShield */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SnapShield;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 040535B72E9C4F9A00F1048D /* Project object */;
 }
